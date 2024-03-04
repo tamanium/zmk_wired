@@ -1,0 +1,12 @@
+#全体通して不明　しかし変える必要もなさそうなので触れないでおく
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+  self:
+    path: config
