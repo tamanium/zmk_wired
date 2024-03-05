@@ -1,11 +1,11 @@
 file_format: "1"
-id: tiny20
-name: tiny20
+id: asym_ble
+name: asym_ble
 type: shield
 url: https://github.com/enzocoralc/Tiny20/
 requires: [seeeduino_xiao_ble]
 features:
   - keys
 siblings:
-  - tiny_left
-  - tiny_right
+  - asym_left
+  - asym_right

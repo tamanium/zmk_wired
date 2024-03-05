@@ -5,7 +5,7 @@
 #変更するとすればtiny20_left(right)のところだけど
 #この値がどこで定義されているのか不明
 config SHIELD_TINY_LEFT
-	def_bool $(shields_list_contains,tiny20_left)
+	def_bool $(shields_list_contains,asym_ble_left)
 
 config SHIELD_TINY_RIGHT
-	def_bool $(shields_list_contains,tiny20_right)
+	def_bool $(shields_list_contains,asym_ble_right)

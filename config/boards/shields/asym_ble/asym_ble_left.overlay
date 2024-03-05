@@ -4,8 +4,4 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "tiny20.dtsi"
-
-&default_transform {
-	col-offset = <10>;
-};
+#include "asym_ble.dtsi"
