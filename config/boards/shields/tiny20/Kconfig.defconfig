@@ -6,7 +6,7 @@
 #セントラルに設定かな（これがデフォルトっぽい）
 if SHIELD_TINY_LEFT
 config ZMK_KEYBOARD_NAME
-	default "tamaleft"
+	default "asym_ble"
 
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y
