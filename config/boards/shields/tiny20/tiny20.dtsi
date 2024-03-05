@@ -27,7 +27,7 @@
 	//matrixによるキー入力
 	//多分うえから0,1,...とインデックスがついているっぽい
 	kscan0: kscan {
-		comatible = "zmk,matrix-transform";
+		compatible = "zmk,kscan-gpio-direct";
 		diode-direction = "col2row";
 		col-gpios =
 			<&xiao_d  0  GPIO_ACTIVE_HIGH>,
