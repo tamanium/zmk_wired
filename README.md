@@ -30,10 +30,8 @@ C:.<br>
 　　　　　　　　　　　　　├─コンボの定義<br>
 　　　　　　　　　　　　　└─キーマップ・レイヤーの定義<br>
 　　　　　　　　　　　asym_ble.zmk.yml<br>
-　　　　　　　　　　　　　└─id・name・url等　いまはtiny20について記載<br>
+　　　　　　　　　　　　　└─id・name・url等<br>
 　　　　　　　　　　　asym_ble_left.overlay<br>
-　　　　　　　　　　　　　└─#include "tiny20.dtsi" のみ記載<br>
 　　　　　　　　　　　asym_ble_right.overlay<br>
-　　　　　　　　　　　　　├─#include "tiny20.dtsi"<br>
 　　　　　　　　　　　　　└─col-offset=<20> 右側の場合はcol値を+10するらしい<br>
 　　　　　　　　　　　　　                  この設定のおかげでキーマップ1個でうまいことやれている<br>
