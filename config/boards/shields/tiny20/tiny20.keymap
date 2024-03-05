@@ -37,26 +37,34 @@
 		compatible = "zmk,keymap";
 		default_layer {
 			bindings = <
-				&kp R     &kp S     &kp T     &kp H                 &kp N     &kp E     &kp A     &kp I    
-				&kp Z     &kp X     &kp C     &kp V                 &kp L     &kp D     &kp U     &kp F
-				                    &kp LCTRL &lt NUMBERS SPACE     &lt NAV ENTER &kp LSHFT
+				&kp R  &kp R  &kp R  &kp R  &kp R  &kp R    &kp R  &kp R  &kp R  &kp R  &kp R  &kp R  &kp R  &kp R  &kp R
+				&kp R  &kp R  &kp R  &kp R  &kp R  &kp R    &kp R  &kp R  &kp R  &kp R  &kp R  &kp R  &kp R  &kp R  &kp R
+				&kp R  &kp R  &kp R  &kp R  &kp R  &kp R    &kp R  &kp R  &kp R  &kp R  &kp R  &kp R  &kp R  &kp R  &kp R
+				&kp R  &kp R  &kp R  &kp R  &kp R  &kp R    &kp R  &kp R  &kp R  &kp R  &kp R  &kp R  &kp R  &kp R  &kp R
 			>;
 		};
+		//default_layer {
+		//	bindings = <
+		//		&kp R     &kp S     &kp T     &kp H                 &kp N     &kp E     &kp A     &kp I    
+		//		&kp Z     &kp X     &kp C     &kp V                 &kp L     &kp D     &kp U     &kp F
+		//		                    &kp LCTRL &lt NUMBERS SPACE     &lt NAV ENTER &kp LSHFT
+		//	>;
+		//};
 
-		numbers_layer {
-			bindings = <
-				&kp ESC   &kp LA(TAB)     &kp LC(TAB)     &kp N9                &kp N5     &kp N6     &kp N7     &kp N8    
-				&kp TAB   &kp LA(F4)      &kp LC(F4)       &kp N0                &kp N1     &kp N2     &kp N3     &kp N4
-				                              &kp LCTRL &lt NUMBERS SPACE                &lt NAV ENTER &kp LSHFT
-			>;
-		};
+		//numbers_layer {
+		//	bindings = <
+		//		&kp ESC   &kp LA(TAB)     &kp LC(TAB)     &kp N9                &kp N5     &kp N6     &kp N7     &kp N8    
+		//		&kp TAB   &kp LA(F4)      &kp LC(F4)       &kp N0                &kp N1     &kp N2     &kp N3     &kp N4
+		//		                              &kp LCTRL &lt NUMBERS SPACE                &lt NAV ENTER &kp LSHFT
+		//	>;
+		//};
 
-		nav_layer {
-			bindings = <
-				&kp F4    &kp F5    &kp F6    &kp DEL               &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT    
-				&kp F1    &kp F2    &kp F3    &kp BSPC              &kp HOME     &kp PG_DN    &kp PG_UP  &kp END
-				                    &kp LCTRL &lt NUMBERS SPACE     &lt NAV ENTER &kp LSHFT
-			>;
-		};
+		//nav_layer {
+		//	bindings = <
+		//		&kp F4    &kp F5    &kp F6    &kp DEL               &kp LEFT     &kp DOWN     &kp UP     &kp RIGHT    
+		//		&kp F1    &kp F2    &kp F3    &kp BSPC              &kp HOME     &kp PG_DN    &kp PG_UP  &kp END
+		//		                    &kp LCTRL &lt NUMBERS SPACE     &lt NAV ENTER &kp LSHFT
+		//	>;
+		//};
 	};
 };
