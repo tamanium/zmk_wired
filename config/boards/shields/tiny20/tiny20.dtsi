@@ -12,7 +12,6 @@
 		zmk,kscan = &kscan0;
 		zmk,matrix_transform = &default_transform;
 	};
-	/*
 	default_transform: matrix_transform_0 {
 		compatible = "zmk,matrix-transform";
 		columns = <14>;
@@ -28,7 +27,7 @@
 	//matrixによるキー入力
 	//多分うえから0,1,...とインデックスがついているっぽい
 	kscan0: kscan {
-		comatible = "zmk,kscan-gpio-matrix";
+		comatible = "zmk,matrix-transform";
 		diode-direction = "col2row";
 		col-gpios =
 			<&xiao_d  0  GPIO_ACTIVE_HIGH>,
@@ -45,8 +44,8 @@
 			<&xiao_d  9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
 			<&xiao_d  10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 	};
-	*/
 	
+	/*
 	default_transform: keymap_transform_0 {
 		compatible = "zmk,matrix-transform";
 		columns = <20>;
@@ -76,4 +75,5 @@
 			<&xiao_d  7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
 		;
 	};
+	*/
 };
