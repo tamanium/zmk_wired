@@ -74,7 +74,7 @@
 
 	//gpio-gndによるキー入力
 	//多分うえから0,1,...とインデックスがついているっぽい
-	kscan0: kscan {
+	kscan0: kscan{
 		compatible = "zmk,kscan-gpio-direct";
 		label = "KSCAN";
 		input-gpios =
