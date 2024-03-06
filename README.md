@@ -46,7 +46,43 @@ jobs:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 ```
 ### west.yml
+何もしない<br>
+```yml
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+  self:
+    path: config
+```
 ### Kconfig.defconfig
+デバイス名の定義？<br>
+ZMK_SPLIT(分割キーボード)を設定するか<br>
+ZMK_SPLIT_ROLE_CENTRALを左右どちらに設定するか(通常は左らしい)<br>
+```
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_TINY_LEFT
+config ZMK_KEYBOARD_NAME
+	default "asym_ble"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif
+if SHIELD_TINY_LEFT || SHIELD_TINY_RIGHT
+
+config ZMK_SPLIT
+	default y
+
+endif
+```
 ### Kconfig.shield
 ### asym_ble.conf
 ### asym_ble.dtsi
