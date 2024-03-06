@@ -77,13 +77,15 @@ config ZMK_SPLIT
 endif
 ```
 ### 📄Kconfig.shield
-SHIELD_TINY_LEFT(RIGHT)の定義？<br>
+SHIELD_LEFT(RIGHT)の定義<br>
+任意の名前でok<br>
+.defconfigでこの名前を用いる<br>
 それぞれ$(shields_list_contains,～～)に左右キーボード名を入れる<br>
 ```
-config SHIELD_TINY_LEFT
+config SHIELD_LEFT
 	def_bool $(shields_list_contains,asym_ble_left)
 
-config SHIELD_TINY_RIGHT
+config SHIELD_RIGHT
 	def_bool $(shields_list_contains,asym_ble_right)
 ```
 ### 📄asym_ble.conf
