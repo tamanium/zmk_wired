@@ -3,7 +3,7 @@
 
 if SHIELD_TINY_LEFT
 config ZMK_KEYBOARD_NAME
-	default "asym_ble"
+	default "asym_ble_test"
 
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y
