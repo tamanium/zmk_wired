@@ -5,13 +5,13 @@
 ・左(右)側キーボード:asym_ble_left(right)<br>
 
 📁my_zmk_firmware<br>
-　├── 📄build.yaml<br>
-　├── 📄README.md<br>
-　├── 📁.github<br>
+　├─ 📄build.yaml<br>
+　├─ 📄README.md<br>
+　├─ 📁.github<br>
 　│　　└─ 📁workflows<br>
 　│　　　　└─ 📄build.yml<br>
 　│<br>
-　└── 📁config<br>
+　└─ 📁config<br>
 　　　　├─ 📄west.yml<br>
 　　　　└─ 📁boards<br>
 　　　　　　　└─ 📁shields<br>
@@ -28,15 +28,23 @@
 ## ファイルについて
 
 ### 📄build.yaml
-board: [マイコンボード名]<br>
-shield: [キーボード名1, キーボード名2]<br>
-各キーボード名は〇〇で定義する<br>
+マイコンボードとキーボード名を設定<br>
+キーボード名は〇〇で定義<br>
 ```yaml
 board: [seeeduino_xiao_ble]
 shield: [asym_ble_left, asym_ble_right]
 ```
 ### README.md
+説明文。なくてもOK<br>
 ### build.yml
+何もしない<br>
+```yml
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+```
 ### west.yml
 ### Kconfig.defconfig
 ### Kconfig.shield
