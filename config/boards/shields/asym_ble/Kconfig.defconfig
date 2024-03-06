@@ -1,9 +1,6 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-# 左側の場合
-#キーボード名を定義
-#セントラルに設定かな（これがデフォルトっぽい）
 if SHIELD_TINY_LEFT
 config ZMK_KEYBOARD_NAME
 	default "asym_ble"
@@ -12,8 +9,6 @@ config ZMK_SPLIT_ROLE_CENTRAL
 	default y
 
 endif
-#左側または右側の場合
-#分割設定をtrueかな（これがデフォルトっぽい）
 if SHIELD_TINY_LEFT || SHIELD_TINY_RIGHT
 
 config ZMK_SPLIT
