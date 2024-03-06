@@ -77,10 +77,16 @@ config ZMK_SPLIT
 endif
 ```
 ### 📄Kconfig.shield
-SHIELD_LEFT(RIGHT)の定義<br>
+「シールド設定名」「シールド名」の定義<br>
 任意の名前でok<br>
-.defconfigでこの名前を用いる<br>
-それぞれ$(shields_list_contains,～～)に左右キーボード名を入れる<br>
+・「シールド設定名」.defconfigで使う<br>
+・「シールド名」build.ymlで使う<br>
+
+```
+config 「シールド設定名」
+	def_bool $(shields_list_contains,「シールド名」)
+```
+本ファームウェアでは以下の通り<br>
 ```
 config SHIELD_LEFT
 	def_bool $(shields_list_contains,asym_ble_left)
