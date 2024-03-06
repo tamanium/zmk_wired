@@ -40,7 +40,7 @@
 				&kp CAPS   &kp Q  &kp W      &kp E     &kp R   &kp T                            &kp Y     &kp U      &kp I      &kp O      &kp P     &kp MINUS  &kp BSPC
 				&kp CAPS   &kp A  &kp S      &kp D     &kp F   &kp G                            &kp H     &kp J      &kp K      &kp L      &kp SEMI  &kp ENTER
 				&kp LSHFT  &kp Z  &kp X      &kp C     &kp V   &kp B                    &kp B   &kp N     &kp M      &kp COMMA  &kp DOT    &kp BSLH  &kp RSHFT
-				&kp LC            &kp PSCRN  &kp LALT  &mo 2   &lt 1 SPACE   &kp SPACE  &mo 1   &mo 2     &kp CARET
+				&kp LCTRL         &kp PSCRN  &kp LALT  &mo 2   &lt 1 SPACE   &kp SPACE  &mo 1   &mo 2     &kp CARET
 			>;
 		};
 		layer1 {
