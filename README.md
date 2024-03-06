@@ -1,8 +1,5 @@
 # zmk firmwareの作成方法について
 ## フォルダ構成
-以下条件の場合<br>
-・キーボード名:asym_ble<br>
-・左(右)側キーボード:asym_ble_left(right)<br>
 ```
 📁my_zmk_firmware
 ├─ 📄build.yaml
@@ -29,12 +26,18 @@
 どこで定義されているかは今のところ不明<br>
 シールド名はどっかで定義されている<br>
 ```yaml
+board: [マイコンボード名]
+shield: [左シールド名, 右シールド名]
+```
+
+本ファームウェアでは以下の通り
+```yaml
 board: [seeeduino_xiao_ble]
 shield: [asym_ble_left, asym_ble_right]
 ```
 ### 📄README.md
 説明文。なくてもOK<br>
-### build.yml
+### 📄build.yml
 何もしない<br>
 ```yml
 on: [push, pull_request, workflow_dispatch]
@@ -59,22 +62,14 @@ manifest:
     path: config
 ```
 ### 📄Kconfig.defconfig
-「表示名」...接続時に表示されるデバイス名<br>
-```ini
-config ZMK_KEYBOARD_NAME
-	default "「表示名」"
-```
-その他
-```ini
-#ホストと接続させるシールド
-config ZMK_SPLIT_ROLE_CENTRAL
-	default y
+何かしらの設定を行う<br>
+|変数名|内容|値|明記位置|
+|----|----|----|----|
+|ZMK_KEYBOARD_NAME|ホストに表示するデバイス名|任意|セントラルシールド|
+|ZMK_SPLIT_ROLE_CENTRAL|セントラルシールドかどうか|y|一般的には左シールド|
+|ZMK_SPLIT|分割デバイスかどうか|y|全シールド|
+<br>
 
-
-#分割デバイスかどうか？
-config ZMK_SPLIT
-	default y
-```
 本ファームウェアでは以下の通り
 ```ini
 if SHIELD_LEFT
@@ -100,8 +95,8 @@ endif
 ・「シールド名」適当でもbuild通る　.buildで用いられるシールド名はどっかで定義or登録されているっぽい<br>
 
 ```ini
-config 「シールド設定名」
-	def_bool $(shields_list_contains,「シールド名」)
+config シールド設定名
+	def_bool $(shields_list_contains,シールド名)
 ```
 本ファームウェアでは以下の通り<br>
 ```ini
