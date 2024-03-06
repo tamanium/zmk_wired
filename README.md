@@ -27,7 +27,10 @@
 
 ## ファイルについて
 
-### build.yaml
+### 📄build.yaml
+board: [マイコンボード名]<br>
+shield: [キーボード名1, キーボード名2]<br>
+各キーボード名は〇〇で定義する<br>
 ```yaml
 board: [seeeduino_xiao_ble]
 shield: [asym_ble_left, asym_ble_right]
