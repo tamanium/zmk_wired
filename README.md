@@ -57,7 +57,7 @@ manifest:
     path: config
 ```
 ### 📄Kconfig.defconfig
-デバイス名の定義？<br>
+接続時に表示されるデバイス名の定義<br>
 ZMK_SPLIT(分割キーボード)を設定するか<br>
 ZMK_SPLIT_ROLE_CENTRALを左右どちらに設定するか(通常は左らしい)<br>
 ```
