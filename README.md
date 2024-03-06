@@ -24,8 +24,10 @@
 ## ファイルについて
 
 ### 📄build.yaml
-マイコンボードとキーボード名を設定<br>
-キーボード名は〇〇で定義<br>
+マイコンボードを設定<br>
+使用するマイコンボードに対応する文字列を入力<br>
+どこで定義されているかは今のところ不明<br>
+シールド名はどっかで定義されている<br>
 ```yaml
 board: [seeeduino_xiao_ble]
 shield: [asym_ble_left, asym_ble_right]
@@ -60,7 +62,7 @@ manifest:
 接続時に表示されるデバイス名の定義<br>
 ZMK_SPLIT(分割キーボード)を設定するか<br>
 ZMK_SPLIT_ROLE_CENTRALを左右どちらに設定するか(通常は左らしい)<br>
-```
+```ini
 if SHIELD_LEFT
 config ZMK_KEYBOARD_NAME
 	default "asym_ble"
@@ -80,14 +82,15 @@ endif
 「シールド設定名」「シールド名」の定義<br>
 任意の名前でok<br>
 ・「シールド設定名」.defconfigで使う<br>
-・「シールド名」build.ymlで使う<br>
+~~・「シールド名」build.ymlで使う<br>~~
+・「シールド名」適当でもbuild通る　.buildで用いられるシールド名はどっかで定義or登録されているっぽい<br>
 
-```
+```ini
 config 「シールド設定名」
 	def_bool $(shields_list_contains,「シールド名」)
 ```
 本ファームウェアでは以下の通り<br>
-```
+```ini
 config SHIELD_LEFT
 	def_bool $(shields_list_contains,asym_ble_left)
 
@@ -97,7 +100,7 @@ config SHIELD_RIGHT
 ### 📄asym_ble.conf
 機能設定<br>
 キー入力だけなら全てコメントアウト<br>
-```
+```ini
 # CONFIG_ZMK_RGB_UNDERGLOW=y
 # CONFIG_WS2812_STRIP=y
 # CONFIG_ZMK_USB_LOGGING=y # caused some issues with keys repeating
