@@ -1,2 +1,2 @@
 board: [seeeduino_xiao_ble]
-shield: [asym_ble_left, asym_ble_right]
+shield: [asym_ble_left__, asym_ble_right]
