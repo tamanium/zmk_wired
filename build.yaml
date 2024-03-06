@@ -1,5 +1,2 @@
-# board...使用するマイコンボードの指定
-# shield...これは不明　登録・定義の必要性ありか？とりあえず触れないでおく
-
 board: [seeeduino_xiao_ble]
 shield: [asym_ble_left, asym_ble_right]
