@@ -3,25 +3,24 @@
 以下条件の場合<br>
 ・キーボード名:asym_ble<br>
 ・左(右)側キーボード:asym_ble_left(right)<br>
-
-📁my_zmk_firmware<br>
-├─ 📄build.yaml<br>
-├─ 📄README.md<br>
-├─ 📁.github ─ 📁workflows<br>
-│　　　　　　　└─ 📄build.yml<br>
-│<br>
-└─ 📁config<br>
-　　├─ 📄west.yml<br>
-　　└─ 📁boards ─ 📁shields ─ 📁asym_ble<br>
-　　　　　　　　　　　　　　　　├─ 📄Kconfig.defconfig<br>
-　　　　　　　　　　　　　　　　├─ 📄Kconfig.shield<br>
-　　　　　　　　　　　　　　　　├─ 📄asym_ble.conf<br>
-　　　　　　　　　　　　　　　　├─ 📄asym_ble.dtsi<br>
-　　　　　　　　　　　　　　　　├─ 📄asym_ble.keymap<br>
-　　　　　　　　　　　　　　　　├─ 📄asym_ble.zmk.yml<br>
-　　　　　　　　　　　　　　　　├─ 📄asym_ble_left.overlay<br>
-　　　　　　　　　　　　　　　　└─ 📄asym_ble_right.overlay<br>
-********
+```
+📁my_zmk_firmware
+├─ 📄build.yaml
+├─ 📄README.md
+├─ 📁.github ─ 📁workflows
+│               └─ 📄build.yml
+└─ 📁config
+    ├─ 📄west.yml
+    └─ 📁boards ─ 📁shields ─ 📁asym_ble
+                                ├─ 📄Kconfig.defconfig
+                                ├─ 📄Kconfig.shield
+                                ├─ 📄asym_ble.conf
+                                ├─ 📄asym_ble.dtsi
+                                ├─ 📄asym_ble.keymap
+                                ├─ 📄asym_ble.zmk.yml
+                                ├─ 📄asym_ble_left.overlay
+                                └─ 📄asym_ble_right.overlay
+```
 ## ファイルについて
 
 ### 📄build.yaml
@@ -31,7 +30,7 @@
 board: [seeeduino_xiao_ble]
 shield: [asym_ble_left, asym_ble_right]
 ```
-### README.md
+### 📄README.md
 説明文。なくてもOK<br>
 ### build.yml
 何もしない<br>
@@ -42,7 +41,7 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 ```
-### west.yml
+### 📄west.yml
 何もしない<br>
 ```yml
 manifest:
@@ -57,14 +56,11 @@ manifest:
   self:
     path: config
 ```
-### Kconfig.defconfig
+### 📄Kconfig.defconfig
 デバイス名の定義？<br>
 ZMK_SPLIT(分割キーボード)を設定するか<br>
 ZMK_SPLIT_ROLE_CENTRALを左右どちらに設定するか(通常は左らしい)<br>
 ```
-# Copyright (c) 2022 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
 if SHIELD_TINY_LEFT
 config ZMK_KEYBOARD_NAME
 	default "asym_ble"
@@ -80,22 +76,34 @@ config ZMK_SPLIT
 
 endif
 ```
-### Kconfig.shield
+### 📄Kconfig.shield
 SHIELD_TINY_LEFT(RIGHT)の定義？<br>
 それぞれ$(shields_list_contains,～～)に左右キーボード名を入れる<br>
 ```
-# Copyright (c) 2022 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
 config SHIELD_TINY_LEFT
 	def_bool $(shields_list_contains,asym_ble_left)
 
 config SHIELD_TINY_RIGHT
 	def_bool $(shields_list_contains,asym_ble_right)
 ```
-### asym_ble.conf
-### asym_ble.dtsi
-### asym_ble.keymap
-### asym_ble.zmk.yml
-### asym_ble_left.overlay
-### asym_ble_right.overlay
+### 📄asym_ble.conf
+機能設定<br>
+キー入力だけなら全てコメントアウト<br>
+```
+# CONFIG_ZMK_RGB_UNDERGLOW=y
+# CONFIG_WS2812_STRIP=y
+# CONFIG_ZMK_USB_LOGGING=y # caused some issues with keys repeating
+# CONFIG_ZMK_MOUSE=y
+# CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
+# CONFIG_GPIO=y
+```
+### 📄asym_ble.dtsi
+いろいろ設定<br>
+### 📄asym_ble.keymap
+キーマップ設定<br>
+### 📄asym_ble.zmk.yml
+デバイスのメタデータ設定<br>
+### 📄asym_ble_left.overlay
+シールド毎の設定<br>
+### 📄asym_ble_right.overlay
+シールド毎の設定<br>
