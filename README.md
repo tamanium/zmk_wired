@@ -59,9 +59,23 @@ manifest:
     path: config
 ```
 ### 📄Kconfig.defconfig
-接続時に表示されるデバイス名の定義<br>
-ZMK_SPLIT(分割キーボード)を設定するか<br>
-ZMK_SPLIT_ROLE_CENTRALを左右どちらに設定するか(通常は左らしい)<br>
+「表示名」...接続時に表示されるデバイス名<br>
+```ini
+config ZMK_KEYBOARD_NAME
+	default "「表示名」"
+```
+その他
+```ini
+#ホストと接続させるシールド
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+
+#分割デバイスかどうか？
+config ZMK_SPLIT
+	default y
+```
+本ファームウェアでは以下の通り
 ```ini
 if SHIELD_LEFT
 config ZMK_KEYBOARD_NAME
