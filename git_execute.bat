@@ -51,22 +51,22 @@ for /f "usebackq tokens=1,2" %%a in (`git branch`) do (
 )
 echo.
 
-
+git add .
 
 rem 編集されたファイル名を表示
 echo 編集されたファイル
 set IsFiles=false
-for /f "usebackq tokens=*" %%a in (`git diff --name-only`) do (
-	set IsFiles=false
+for /f "usebackq tokens=*" %%a in (`git diff --cached --name-only`) do (
+	set IsFiles=true
 )
 rem 編集無き場合はその旨表示して終了
 if %IsFiles%==false (
+	git reset HEAD >nul
 	call:MsgBox 編集されたファイルはありません`n終了します OK
 	exit
 )
 
 
-git add .
 call:git_diff A 追加 %GREEN%
 call:git_diff C 複製 %BLUE%
 call:git_diff M 更新 %YELLOW%
