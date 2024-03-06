@@ -1,15 +1,15 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_TINY_LEFT
+if SHIELD_LEFT
 config ZMK_KEYBOARD_NAME
-	default "asym_ble_test"
+	default "asym_ble"
 
 config ZMK_SPLIT_ROLE_CENTRAL
 	default y
 
 endif
-if SHIELD_TINY_LEFT || SHIELD_TINY_RIGHT
+if SHIELD_LEFT || SHIELD_RIGHT
 
 config ZMK_SPLIT
 	default y

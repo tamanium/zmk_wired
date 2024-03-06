@@ -1,8 +1,8 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-config SHIELD_TINY_LEFT
+config SHIELD_LEFT
 	def_bool $(shields_list_contains,asym_ble_left)
 
-config SHIELD_TINY_RIGHT
+config SHIELD_RIGHT
 	def_bool $(shields_list_contains,asym_ble_right)
