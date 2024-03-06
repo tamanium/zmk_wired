@@ -61,7 +61,7 @@ manifest:
 ZMK_SPLIT(分割キーボード)を設定するか<br>
 ZMK_SPLIT_ROLE_CENTRALを左右どちらに設定するか(通常は左らしい)<br>
 ```
-if SHIELD_TINY_LEFT
+if SHIELD_LEFT
 config ZMK_KEYBOARD_NAME
 	default "asym_ble"
 
@@ -69,7 +69,7 @@ config ZMK_SPLIT_ROLE_CENTRAL
 	default y
 
 endif
-if SHIELD_TINY_LEFT || SHIELD_TINY_RIGHT
+if SHIELD_LEFT || SHIELD_RIGHT
 
 config ZMK_SPLIT
 	default y
