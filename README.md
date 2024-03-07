@@ -84,12 +84,36 @@ config SHIELD_RIGHT
 # CONFIG_GPIO=y
 ```
 ### 📄asym_ble.dtsi
-いろいろ設定<br>
+かなり長いので省略<br>
 ### 📄asym_ble.keymap
-キーマップ設定<br>
+かなり長いので省略<br>
 ### 📄asym_ble.zmk.yml
 デバイスのメタデータ設定<br>
+```yml
+file_format: "1"
+id: asym_ble
+name: asym_ble
+type: shield
+url: https://github.com/tamanium/my_zmk_firmware/
+requires: [seeeduino_xiao_ble]
+features:
+  - keys
+siblings:
+  - asym_ble_left
+  - asym_ble_right
+  
+```
 ### 📄asym_ble_left.overlay
-シールド毎の設定<br>
+特に各シールドの設定が無ければこのファイルいらない？
+```ini
+#include "asym_ble.dtsi"
+```
 ### 📄asym_ble_right.overlay
-シールド毎の設定<br>
+特に各シールドの設定が無ければこのファイルいらない？
+```ini
+#include "asym_ble.dtsi"
+
+&default_transform {
+	col-offset = <6>;
+};
+```
