@@ -21,13 +21,14 @@
 ## ファイルについて
 
 ### 📄build.yaml
+マイコンボード・シールドの設定？
 ```yaml
 board: [seeeduino_xiao_ble]
 shield: [asym_ble_left, asym_ble_right]
 ```
 ### 📄README.md
-これ。なくてもOK<br>
-### 📄build.yml
+この文章
+### 📄build.yml (ノータッチ)
 ```yml
 on: [push, pull_request, workflow_dispatch]
 
@@ -35,7 +36,7 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 ```
-### 📄west.yml
+### 📄west.yml (ノータッチ)
 ```yml
 manifest:
   remotes:
@@ -50,6 +51,7 @@ manifest:
     path: config
 ```
 ### 📄Kconfig.defconfig
+各シールドの役割付け・デバイス表示名定義
 ```ini
 if SHIELD_LEFT
 config ZMK_KEYBOARD_NAME
@@ -67,6 +69,7 @@ config ZMK_SPLIT
 endif
 ```
 ### 📄Kconfig.shield
+シールド設定の定義
 ```ini
 config SHIELD_LEFT
 	def_bool $(shields_list_contains,asym_ble_left)
@@ -75,6 +78,7 @@ config SHIELD_RIGHT
 	def_bool $(shields_list_contains,asym_ble_right)
 ```
 ### 📄asym_ble.conf
+機能設定 キー入力だけなら入力不要or全コメントアウト
 ```ini
 # CONFIG_ZMK_RGB_UNDERGLOW=y
 # CONFIG_WS2812_STRIP=y
