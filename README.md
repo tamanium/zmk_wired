@@ -21,24 +21,13 @@
 ## ファイルについて
 
 ### 📄build.yaml
-マイコンボードを設定<br>
-使用するマイコンボードに対応する文字列を入力<br>
-どこで定義されているかは今のところ不明<br>
-シールド名はどっかで定義されている<br>
-```yaml
-board: [マイコンボード名]
-shield: [左シールド名, 右シールド名]
-```
-
-本ファームウェアでは以下の通り
 ```yaml
 board: [seeeduino_xiao_ble]
 shield: [asym_ble_left, asym_ble_right]
 ```
 ### 📄README.md
-説明文。なくてもOK<br>
+これ。なくてもOK<br>
 ### 📄build.yml
-何もしない<br>
 ```yml
 on: [push, pull_request, workflow_dispatch]
 
@@ -47,7 +36,6 @@ jobs:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 ```
 ### 📄west.yml
-何もしない<br>
 ```yml
 manifest:
   remotes:
@@ -62,15 +50,6 @@ manifest:
     path: config
 ```
 ### 📄Kconfig.defconfig
-何かしらの設定を行う<br>
-|変数名|内容|値|明記位置|
-|----|----|----|----|
-|ZMK_KEYBOARD_NAME|ホストに表示するデバイス名|任意|セントラルシールド|
-|ZMK_SPLIT_ROLE_CENTRAL|セントラルシールドかどうか|y|一般的には左シールド|
-|ZMK_SPLIT|分割デバイスかどうか|y|全シールド|
-<br>
-
-本ファームウェアでは以下の通り
 ```ini
 if SHIELD_LEFT
 config ZMK_KEYBOARD_NAME
@@ -88,17 +67,6 @@ config ZMK_SPLIT
 endif
 ```
 ### 📄Kconfig.shield
-「シールド設定名」「シールド名」の定義<br>
-任意の名前でok<br>
-・「シールド設定名」.defconfigで使う<br>
-~~・「シールド名」build.ymlで使う<br>~~
-・「シールド名」適当でもbuild通る　.buildで用いられるシールド名はどっかで定義or登録されているっぽい<br>
-
-```ini
-config シールド設定名
-	def_bool $(shields_list_contains,シールド名)
-```
-本ファームウェアでは以下の通り<br>
 ```ini
 config SHIELD_LEFT
 	def_bool $(shields_list_contains,asym_ble_left)
@@ -107,8 +75,6 @@ config SHIELD_RIGHT
 	def_bool $(shields_list_contains,asym_ble_right)
 ```
 ### 📄asym_ble.conf
-機能設定<br>
-キー入力だけなら全てコメントアウト<br>
 ```ini
 # CONFIG_ZMK_RGB_UNDERGLOW=y
 # CONFIG_WS2812_STRIP=y
