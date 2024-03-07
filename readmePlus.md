@@ -10,6 +10,7 @@
 - firmware再書込
 ### 解決策
 - 別キーボードのfirmwareを書き込み、その後本来のfirmwareを書き込んだ
+    - 今回用いたのは[mentako-ya様のリセット用uf2](https://github.com/mentako-ya/magictrackrest-zmk-config/tree/main/firmware)
 > 本キーボードの情報をクリアにできれば書き込む内容はなんでもOK？
 ### 原因
 不明
