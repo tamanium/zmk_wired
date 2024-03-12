@@ -2,13 +2,12 @@
 ## フォルダ構成
 ```
 📁my_zmk_firmware
-├─ 📄build.yaml
-├─ 📄README.md
-├─ 📁.github ─ 📁workflows
-│               └─ 📄build.yml
-└─ 📁config
-    ├─ 📄west.yml
-    └─ 📁boards ─ 📁shields
+ ├─ 📄build.yaml
+ ├─ 📄README.md
+ ├─ 📁.github ─ 📁workflows ─ 📄build.yml
+ └─ 📁config
+     ├─ 📄west.yml
+     └─ 📁boards ─ 📁shields
                     ├─ 📁settings_reset(構成省略)
                     └─ 📁asym_ble
                         ├─ 📄Kconfig.defconfig
@@ -28,9 +27,21 @@
 board: [seeeduino_xiao_ble]
 shield: [asym_ble_left, asym_ble_right]
 ```
+こっちの表記方法でもOK
+
+```yaml
+include:
+  - board: seeeduino_xiao_ble
+    shield: asym_ble_left
+  - board: seeeduino_xiao_ble
+    shield: asym_ble_right
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
+```
+
 ### 📄README.md
 この文章
-### 📄build.yml (ノータッチ)
+### 📄build.yml
 <details>
 
 <summary>クリックして内容表示</summary>
@@ -44,7 +55,7 @@ jobs:
 ```
 </details>
 
-### 📄west.yml (ノータッチ)
+### 📄west.yml
 <details>
 
 <summary>クリックして内容表示</summary>
@@ -123,12 +134,15 @@ siblings:
   
 ```
 ### 📄asym_ble_left.overlay
-特に各シールドの設定が無ければこのファイルいらない？
+dtsiの内容に対して左シールド独自の設定を記載<br>
+col-gpiosのピン割り当てとか<br>
 ```ini
 #include "asym_ble.dtsi"
 ```
 ### 📄asym_ble_right.overlay
-特に各シールドの設定が無ければこのファイルいらない？
+dtsiの内容に対して左シールド独自の設定を記載<br>
+col-gpiosのピン割り当てとか、
+keymapのcol番号のオフセット設定とか<br>
 ```ini
 #include "asym_ble.dtsi"
 
