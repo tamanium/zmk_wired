@@ -11,7 +11,7 @@
 ### 解決策
 - リセット用のfirmwareを書き込み、その後本来のfirmwareを書き込んだ
     - ~~[mentako-ya様のリセット用uf2](https://github.com/mentako-ya/magictrackrest-zmk-config/tree/main/firmware)~~
-    - リセット用firmwareのソースを追加　ビルド時に左右シールドと共に生成される
+    - リセット用firmwareのソースを追加　ビルド時に左右シールドと共に生成される<br>
 > 本キーボードの情報をクリアにできれば書き込む内容はなんでもOK？<br>
 ### 原因
 不明
@@ -19,6 +19,7 @@
 - デバイス削除（ペアリング解除）操作を行わない
 - bluetooth接続を切りたい場合はホストのbluetooth機能をoffにする
 - firmwareを上書きする前にリセット用firmwareを書き込む
+
 
 ## case 2 BT接続しているのにUSB接続によるキー入力が優先
 ### 事象
@@ -28,11 +29,13 @@
 ### 試したこと（解決不可）
 - .conf : CONFIG_USB=n
 - .conf : CONFIG_ZMK_USB=n
+- .keymap : &out OUT_TOGでキー出力接続を切り替える
 - （未実施）電源ピンまたはバッテリー用パッドから給電させる
 ### 解決策
 - 未解決
 ### 原因
-- USB接続が優先されるっぽい 純粋に給電だけさせればいけるかな
+- USB接続が優先される<br>[該当ページ](https://zmk.dev/docs/behaviors/outputs)
+
 
 ## case 3 .confファイルの設定が反映されている気配なし
 ### 事象
