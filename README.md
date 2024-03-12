@@ -8,15 +8,17 @@
 │               └─ 📄build.yml
 └─ 📁config
     ├─ 📄west.yml
-    └─ 📁boards ─ 📁shields ─ 📁asym_ble
-                                ├─ 📄Kconfig.defconfig
-                                ├─ 📄Kconfig.shield
-                                ├─ 📄asym_ble.conf
-                                ├─ 📄asym_ble.dtsi
-                                ├─ 📄asym_ble.keymap
-                                ├─ 📄asym_ble.zmk.yml
-                                ├─ 📄asym_ble_left.overlay
-                                └─ 📄asym_ble_right.overlay
+    └─ 📁boards ─ 📁shields
+                    ├─ 📁settings_reset(構成省略)
+                    └─ 📁asym_ble
+                        ├─ 📄Kconfig.defconfig
+                        ├─ 📄Kconfig.shield
+                        ├─ 📄asym_ble.conf
+                        ├─ 📄asym_ble.dtsi
+                        ├─ 📄asym_ble.keymap
+                        ├─ 📄asym_ble.zmk.yml
+                        ├─ 📄asym_ble_left.overlay
+                        └─ 📄asym_ble_right.overlay
 ```
 ## ファイルについて
 
