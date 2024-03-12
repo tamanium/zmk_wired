@@ -9,11 +9,42 @@
 - PCの再起動
 - firmware再書込
 ### 解決策
-- 別キーボードのfirmwareを書き込み、その後本来のfirmwareを書き込んだ
-    - 今回用いたのは[mentako-ya様のリセット用uf2](https://github.com/mentako-ya/magictrackrest-zmk-config/tree/main/firmware)
-> 本キーボードの情報をクリアにできれば書き込む内容はなんでもOK？
+- リセット用のfirmwareを書き込み、その後本来のfirmwareを書き込んだ
+    - ~~[mentako-ya様のリセット用uf2](https://github.com/mentako-ya/magictrackrest-zmk-config/tree/main/firmware)~~
+    - リセット用firmwareのソースを追加　ビルド時に左右シールドと共に生成される<br>
+> 本キーボードの情報をクリアにできれば書き込む内容はなんでもOK？<br>
 ### 原因
 不明
 ### 対策
 - デバイス削除（ペアリング解除）操作を行わない
 - bluetooth接続を切りたい場合はホストのbluetooth機能をoffにする
+- firmwareを上書きする前にリセット用firmwareを書き込む
+
+
+## case 2 BT接続しているのにUSB接続によるキー入力が優先
+### 事象
+1. シールドをUSB接続する
+2. キーボードをペアリングする
+3. キー入力する（<-この入力はUSB接続）
+### 試したこと（解決不可）
+- .conf : CONFIG_USB=n
+- .conf : CONFIG_ZMK_USB=n
+- .keymap : &out OUT_TOGでキー出力接続を切り替える
+- （未実施）電源ピンまたはバッテリー用パッドから給電させる
+### 解決策
+- 未解決
+### 原因
+- USB接続が優先される<br>[該当ページ](https://zmk.dev/docs/behaviors/outputs)
+
+
+## case 3 .confファイルの設定が反映されている気配なし
+### 事象
+1. .confに設定定数を定義する（例 CONFIG_USB, CONFIG_ZMK_USB, CONFIG_BT）
+2. buildしてファームウェアを書き込む
+3. 挙動をみる<-USBつかえたりBT接続したりと設定が反映されてない
+### 試したこと（解決不可）
+- 特になし
+### 解決策
+- 未解決
+### 原因
+- 不明

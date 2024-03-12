@@ -2,21 +2,22 @@
 ## フォルダ構成
 ```
 📁my_zmk_firmware
-├─ 📄build.yaml
-├─ 📄README.md
-├─ 📁.github ─ 📁workflows
-│               └─ 📄build.yml
-└─ 📁config
-    ├─ 📄west.yml
-    └─ 📁boards ─ 📁shields ─ 📁asym_ble
-                                ├─ 📄Kconfig.defconfig
-                                ├─ 📄Kconfig.shield
-                                ├─ 📄asym_ble.conf
-                                ├─ 📄asym_ble.dtsi
-                                ├─ 📄asym_ble.keymap
-                                ├─ 📄asym_ble.zmk.yml
-                                ├─ 📄asym_ble_left.overlay
-                                └─ 📄asym_ble_right.overlay
+ ├─ 📄build.yaml
+ ├─ 📄README.md
+ ├─ 📁.github ─ 📁workflows ─ 📄build.yml
+ └─ 📁config
+     ├─ 📄west.yml
+     └─ 📁boards ─ 📁shields
+                    ├─ 📁settings_reset(構成省略)
+                    └─ 📁asym_ble
+                        ├─ 📄Kconfig.defconfig
+                        ├─ 📄Kconfig.shield
+                        ├─ 📄asym_ble.conf
+                        ├─ 📄asym_ble.dtsi
+                        ├─ 📄asym_ble.keymap
+                        ├─ 📄asym_ble.zmk.yml
+                        ├─ 📄asym_ble_left.overlay
+                        └─ 📄asym_ble_right.overlay
 ```
 ## ファイルについて
 
@@ -26,9 +27,25 @@
 board: [seeeduino_xiao_ble]
 shield: [asym_ble_left, asym_ble_right]
 ```
+こっちの表記方法でもOK
+
+```yaml
+include:
+  - board: seeeduino_xiao_ble
+    shield: asym_ble_left
+  - board: seeeduino_xiao_ble
+    shield: asym_ble_right
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
+```
+
 ### 📄README.md
 この文章
-### 📄build.yml (ノータッチ)
+### 📄build.yml
+<details>
+
+<summary>クリックして内容表示</summary>
+	
 ```yml
 on: [push, pull_request, workflow_dispatch]
 
@@ -36,7 +53,14 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 ```
-### 📄west.yml (ノータッチ)
+</details>
+
+### 📄west.yml
+<details>
+
+<summary>クリックして内容表示</summary>
+	
+```yml
 ```yml
 manifest:
   remotes:
@@ -50,6 +74,8 @@ manifest:
   self:
     path: config
 ```
+</details>
+
 ### 📄Kconfig.defconfig
 各シールドの役割付け・デバイス表示名定義
 ```ini
@@ -108,12 +134,15 @@ siblings:
   
 ```
 ### 📄asym_ble_left.overlay
-特に各シールドの設定が無ければこのファイルいらない？
+dtsiの内容に対して左シールド独自の設定を記載<br>
+col-gpiosのピン割り当てとか<br>
 ```ini
 #include "asym_ble.dtsi"
 ```
 ### 📄asym_ble_right.overlay
-特に各シールドの設定が無ければこのファイルいらない？
+dtsiの内容に対して左シールド独自の設定を記載<br>
+col-gpiosのピン割り当てとか、
+keymapのcol番号のオフセット設定とか<br>
 ```ini
 #include "asym_ble.dtsi"
 
