@@ -2,21 +2,21 @@
 ## フォルダ構成
 ```
 📁my_zmk_firmware
- ├─ 📄build.yaml
- ├─ 📄README.md
- ├─ 📁.github ─ 📁workflows
- │               └─ 📄build.yml
- └─ 📁config
-     ├─ 📄west.yml
-     └─ 📁boards ─ 📁shields ─ 📁asym_ble
-                                 ├─ 📄Kconfig.defconfig
-                                 ├─ 📄Kconfig.shield
-                                 ├─ 📄asym_ble.conf
-                                 ├─ 📄asym_ble.dtsi
-                                 ├─ 📄asym_ble.keymap
-                                 ├─ 📄asym_ble.zmk.yml
-                                 ├─ 📄asym_ble_left.overlay
-                                 └─ 📄asym_ble_right.overlay
+├─ 📄build.yaml
+├─ 📄README.md
+├─ 📁.github ─ 📁workflows
+│               └─ 📄build.yml
+└─ 📁config
+    ├─ 📄west.yml
+    └─ 📁boards ─ 📁shields ─ 📁asym_ble
+                                ├─ 📄Kconfig.defconfig
+                                ├─ 📄Kconfig.shield
+                                ├─ 📄asym_ble.conf
+                                ├─ 📄asym_ble.dtsi
+                                ├─ 📄asym_ble.keymap
+                                ├─ 📄asym_ble.zmk.yml
+                                ├─ 📄asym_ble_left.overlay
+                                └─ 📄asym_ble_right.overlay
 ```
 ## ファイルについて
 
@@ -28,9 +28,10 @@ shield: [asym_ble_left, asym_ble_right]
 ```
 ### 📄README.md
 この文章
-### 📄build.yml
+### 📄build.yml (ノータッチ)
 <details>
-<summary>ソース</summary>	
+
+<summary>クリックして内容表示</summary>
 	
 ```yml
 on: [push, pull_request, workflow_dispatch]
@@ -41,10 +42,12 @@ jobs:
 ```
 </details>
 
-### 📄west.yml
+### 📄west.yml (ノータッチ)
 <details>
-<summary>ソース</summary>	
+
+<summary>クリックして内容表示</summary>
 	
+```yml
 ```yml
 manifest:
   remotes:
