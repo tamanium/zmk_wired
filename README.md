@@ -8,7 +8,7 @@
  └─ 📁config
      ├─ 📄west.yml
      └─ 📁boards ─ 📁shields
-                    ├─ 📁settings_reset(構成省略)
+                    ├─ 📁settings_reset
                     └─ 📁asym_ble
                         ├─ 📄Kconfig.defconfig
                         ├─ 📄Kconfig.shield
@@ -105,14 +105,7 @@ config SHIELD_RIGHT
 ```
 ### 📄asym_ble.conf
 機能設定 キー入力だけなら入力不要or全コメントアウト
-```ini
-# CONFIG_ZMK_RGB_UNDERGLOW=y
-# CONFIG_WS2812_STRIP=y
-# CONFIG_ZMK_USB_LOGGING=y # caused some issues with keys repeating
-# CONFIG_ZMK_MOUSE=y
-# CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
-# CONFIG_GPIO=y
-```
+
 ### 📄asym_ble.dtsi
 かなり長いので省略<br>
 ### 📄asym_ble.keymap
