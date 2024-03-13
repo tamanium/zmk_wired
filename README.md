@@ -1,6 +1,6 @@
 # zmk firmwareの作成方法について
 ## フォルダ構成
-```
+```:フォルダ構成
 📁my_zmk_firmware
  ├─ 📄build.yaml
  ├─ 📄README.md
@@ -23,13 +23,13 @@
 
 ### 📄build.yaml
 マイコンボード・シールドの設定？
-```yaml
+```yaml:build.yaml
 board: [seeeduino_xiao_ble]
 shield: [asym_ble_left, asym_ble_right]
 ```
 こっちの表記方法でもOK
 
-```yaml
+```yaml:build.yaml
 include:
   - board: seeeduino_xiao_ble
     shield: asym_ble_left
@@ -46,7 +46,7 @@ include:
 
 <summary>クリックして内容表示</summary>
 	
-```yml
+```yml:build.yml
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
