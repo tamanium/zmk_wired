@@ -8,7 +8,7 @@
  └─ 📁config
      ├─ 📄west.yml
      └─ 📁boards ─ 📁shields
-                    ├─ 📁settings_reset(構成省略)
+                    ├─ 📁settings_reset
                     └─ 📁asym_ble
                         ├─ 📄Kconfig.defconfig
                         ├─ 📄Kconfig.shield
@@ -59,8 +59,7 @@ jobs:
 <details>
 
 <summary>クリックして内容表示</summary>
-	
-```yml
+
 ```yml
 manifest:
   remotes:
@@ -105,16 +104,50 @@ config SHIELD_RIGHT
 ```
 ### 📄asym_ble.conf
 機能設定 キー入力だけなら入力不要or全コメントアウト
-```kconfig
-# CONFIG_ZMK_RGB_UNDERGLOW=y
-# CONFIG_WS2812_STRIP=y
-# CONFIG_ZMK_USB_LOGGING=y # caused some issues with keys repeating
-# CONFIG_ZMK_MOUSE=y
-# CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
-# CONFIG_GPIO=y
-```
+
 ### 📄asym_ble.dtsi
-かなり長いので省略<br>
+かなり長いので省略
+
+```devicetree
+
+#include <dt-bindings/zmk/matrix_transform.h>
+/ {
+	chosen {
+		zmk,kscan = &kscan0;
+		zmk,matrix_transform = &default_transform;
+	};
+    
+	kscan0: kscan {
+		compatible = "zmk,kscan-gpio-matrix";
+		diode-direction = "col2row";
+		row-gpios =
+			<&xiao_d  1  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+			～～～
+			<&xiao_d  3  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+		col-gpios =
+			<&xiao_d  0  GPIO_ACTIVE_HIGH>,
+			～～～
+			<&xiao_d  2  GPIO_ACTIVE_HIGH>;
+	};
+    
+	default_transform: matrix_transform_0 {
+		compatible = "zmk,matrix-tranxform";
+		rows = <4>;
+		columns = <12>;
+		map = <
+			RC(0,0) RC(0,1) RC(0,2)～～～;
+			RC(1,0) RC(1,1) RC(1,2)～～～;
+			RC(2,0) RC(2,1) RC(2,2)～～～;
+			RC(3,0)         RC(3,2)～～～;
+		>;
+	}
+};
+```
+
+
+
+
+
 ### 📄asym_ble.keymap
 かなり長いので省略<br>
 ### 📄asym_ble.zmk.yml
@@ -143,6 +176,7 @@ col-gpiosのピン割り当てとか<br>
 dtsiの内容に対して左シールド独自の設定を記載<br>
 col-gpiosのピン割り当てとか、
 keymapのcol番号のオフセット設定とか<br>
+
 ```dts
 #include "asym_ble.dtsi"
 
