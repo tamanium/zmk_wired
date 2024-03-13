@@ -108,7 +108,7 @@ config SHIELD_RIGHT
 ### 📄asym_ble.dtsi
 かなり長いので省略
 
-```ini
+```c
 
 #include <dt-bindings/zmk/matrix_transform.h>
 / {
@@ -164,19 +164,16 @@ siblings:
   
 ```
 ### 📄asym_ble_left.overlay
-dtsiの内容に対して左シールド独自の設定を記載<br>
-col-gpiosのピン割り当てとか<br>
-```ini
+左シールド独自の設定を記載(col-gpiosなど)
+
+```c
 #include "asym_ble.dtsi"
 ```
 ### 📄asym_ble_right.overlay
-dtsiの内容に対して左シールド独自の設定を記載<br>
-col-gpiosのピン割り当てとか、
-keymapのcol番号のオフセット設定とか<br>
+右シールド独自の設定を記載(col-gpiosやcol番号のオフセットなど)
 
-```ini
+```c
 #include "asym_ble.dtsi"
-
 &default_transform {
 	col-offset = <6>;
 };
