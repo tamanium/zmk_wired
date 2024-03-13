@@ -78,7 +78,7 @@ manifest:
 
 ### 📄Kconfig.defconfig
 各シールドの役割付け・デバイス表示名定義
-```ini
+```kconfig
 if SHIELD_LEFT
 config ZMK_KEYBOARD_NAME
 	default "asym_ble"
@@ -96,7 +96,7 @@ endif
 ```
 ### 📄Kconfig.shield
 シールド設定の定義
-```ini
+```dts
 config SHIELD_LEFT
 	def_bool $(shields_list_contains,asym_ble_left)
 
@@ -105,7 +105,7 @@ config SHIELD_RIGHT
 ```
 ### 📄asym_ble.conf
 機能設定 キー入力だけなら入力不要or全コメントアウト
-```ini
+```kconfig
 # CONFIG_ZMK_RGB_UNDERGLOW=y
 # CONFIG_WS2812_STRIP=y
 # CONFIG_ZMK_USB_LOGGING=y # caused some issues with keys repeating
@@ -136,14 +136,14 @@ siblings:
 ### 📄asym_ble_left.overlay
 dtsiの内容に対して左シールド独自の設定を記載<br>
 col-gpiosのピン割り当てとか<br>
-```ini
+```dts
 #include "asym_ble.dtsi"
 ```
 ### 📄asym_ble_right.overlay
 dtsiの内容に対して左シールド独自の設定を記載<br>
 col-gpiosのピン割り当てとか、
 keymapのcol番号のオフセット設定とか<br>
-```ini
+```dts
 #include "asym_ble.dtsi"
 
 &default_transform {
