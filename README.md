@@ -23,13 +23,13 @@
 
 ### 📄build.yaml
 マイコンボード・シールドの設定？
-```yaml:build.yaml
+```yaml
 board: [seeeduino_xiao_ble]
 shield: [asym_ble_left, asym_ble_right]
 ```
 こっちの表記方法でもOK
 
-```yaml:build.yaml
+```yaml
 include:
   - board: seeeduino_xiao_ble
     shield: asym_ble_left
@@ -46,7 +46,7 @@ include:
 
 <summary>クリックして内容表示</summary>
 	
-```yml:build.yml
+```yml
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
@@ -77,7 +77,7 @@ manifest:
 
 ### 📄Kconfig.defconfig
 各シールドの役割付け・デバイス表示名定義
-```kconfig
+```ini
 if SHIELD_LEFT
 config ZMK_KEYBOARD_NAME
 	default "asym_ble"
@@ -95,7 +95,7 @@ endif
 ```
 ### 📄Kconfig.shield
 シールド設定の定義
-```dts
+```ini
 config SHIELD_LEFT
 	def_bool $(shields_list_contains,asym_ble_left)
 
@@ -108,7 +108,7 @@ config SHIELD_RIGHT
 ### 📄asym_ble.dtsi
 かなり長いので省略
 
-```devicetree
+```ini
 
 #include <dt-bindings/zmk/matrix_transform.h>
 / {
@@ -145,9 +145,6 @@ config SHIELD_RIGHT
 ```
 
 
-
-
-
 ### 📄asym_ble.keymap
 かなり長いので省略<br>
 ### 📄asym_ble.zmk.yml
@@ -169,7 +166,7 @@ siblings:
 ### 📄asym_ble_left.overlay
 dtsiの内容に対して左シールド独自の設定を記載<br>
 col-gpiosのピン割り当てとか<br>
-```dts
+```ini
 #include "asym_ble.dtsi"
 ```
 ### 📄asym_ble_right.overlay
@@ -177,7 +174,7 @@ dtsiの内容に対して左シールド独自の設定を記載<br>
 col-gpiosのピン割り当てとか、
 keymapのcol番号のオフセット設定とか<br>
 
-```dts
+```ini
 #include "asym_ble.dtsi"
 
 &default_transform {
