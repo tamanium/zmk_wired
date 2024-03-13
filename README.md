@@ -77,7 +77,7 @@ manifest:
 
 ### 📄Kconfig.defconfig
 各シールドの役割付け・デバイス表示名定義
-```ini
+```kconfig
 if SHIELD_LEFT
 config ZMK_KEYBOARD_NAME
 	default "asym_ble"
@@ -95,7 +95,7 @@ endif
 ```
 ### 📄Kconfig.shield
 シールド設定の定義
-```ini
+```dts
 config SHIELD_LEFT
 	def_bool $(shields_list_contains,asym_ble_left)
 
@@ -169,14 +169,15 @@ siblings:
 ### 📄asym_ble_left.overlay
 dtsiの内容に対して左シールド独自の設定を記載<br>
 col-gpiosのピン割り当てとか<br>
-```ini
+```dts
 #include "asym_ble.dtsi"
 ```
 ### 📄asym_ble_right.overlay
 dtsiの内容に対して左シールド独自の設定を記載<br>
 col-gpiosのピン割り当てとか、
 keymapのcol番号のオフセット設定とか<br>
-```devicetree
+
+```dts
 #include "asym_ble.dtsi"
 
 &default_transform {
