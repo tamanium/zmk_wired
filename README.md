@@ -59,8 +59,7 @@ jobs:
 <details>
 
 <summary>クリックして内容表示</summary>
-	
-```yml
+
 ```yml
 manifest:
   remotes:
@@ -109,7 +108,7 @@ config SHIELD_RIGHT
 ### 📄asym_ble.dtsi
 かなり長いので省略
 
-```dts
+```devicetree
 
 #include <dt-bindings/zmk/matrix_transform.h>
 / {
@@ -177,7 +176,7 @@ col-gpiosのピン割り当てとか<br>
 dtsiの内容に対して左シールド独自の設定を記載<br>
 col-gpiosのピン割り当てとか、
 keymapのcol番号のオフセット設定とか<br>
-```ini
+```devicetree
 #include "asym_ble.dtsi"
 
 &default_transform {
