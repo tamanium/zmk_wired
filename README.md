@@ -3,7 +3,6 @@
 ```:フォルダ構成
 📁my_zmk_firmware
  ├─ 📄build.yaml
- ├─ 📄README.md
  ├─ 📁.github ─ 📁workflows ─ 📄build.yml
  └─ 📁config
      ├─ 📄west.yml
@@ -22,12 +21,12 @@
 ## ファイルについて
 
 ### 📄build.yaml
-マイコンボード・シールドの設定？
+マイコンボードとシールドの名前を入力
 ```yaml
 board: [seeeduino_xiao_ble]
 shield: [asym_ble_left, asym_ble_right]
 ```
-こっちの表記方法でもOK
+こっちの入力方法でもOK
 
 ```yaml
 include:
@@ -39,8 +38,6 @@ include:
     shield: settings_reset
 ```
 
-### 📄README.md
-　この文章
 ### 📄build.yml
 <details>
 
@@ -76,7 +73,7 @@ manifest:
 </details>
 
 ### 📄Kconfig.defconfig
-各シールドの役割付け・デバイス表示名定義
+各シールドの役割付けとデバイス表示名の定義
 ```c
 if SHIELD_LEFT
 config ZMK_KEYBOARD_NAME
@@ -116,8 +113,11 @@ config SHIELD_RIGHT
 	};
 	default_transform: matrix_transform_0 {
 		compatible = "zmk,matrix-transform";
+		//行数を定義
 		rows = <4>;
+		//列数を定義
 		columns = <13>;
+		//キーマップのレイアウトを定義 RC(行番号,列番号)
 		map = <
 			RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)                            RC(0,6) RC(0,7) RC(0,8) RC(0,9) RC(0,10) RC(0,11) RC(3,11)
 			RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5)                            RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11)
@@ -129,9 +129,11 @@ config SHIELD_RIGHT
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
 		diode-direction = "col2row";
+		//行のGPIOを定義 第3引数は全て同じ
 		row-gpios =
 			<&xiao_d  1  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
 			<&xiao_d  3  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+		//列のGPIOを定義  第3引数は全て同じ
 		col-gpios =
 			<&xiao_d  0  GPIO_ACTIVE_HIGH>,
 			<&xiao_d  2  GPIO_ACTIVE_HIGH>;
@@ -146,13 +148,17 @@ config SHIELD_RIGHT
 デバイスのメタデータ設定<br>
 ```yml
 file_format: "1"
+//キーボード名
 id: asym_ble
+//キーボード名
 name: asym_ble
 type: shield
 url: https://github.com/tamanium/my_zmk_firmware/
+//マイコンボード名
 requires: [seeeduino_xiao_ble]
 features:
   - keys
+//シールド名
 siblings:
   - asym_ble_left
   - asym_ble_right
