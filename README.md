@@ -21,17 +21,17 @@
 ## ファイルについて
 
 ### 📄build.yaml
-マイコンボードとシールドの名前を入力
 ```yaml
+#マイコンボード名
 board: [seeeduino_xiao_ble]
-shield: [asym_ble_left, asym_ble_right]
+#シールド名 カンマ区切り
+shield: [asym_ble_left, asym_ble_right, settings_reset] 
 ```
 こっちの入力方法でもOK
-
 ```yaml
 include:
-  - board: seeeduino_xiao_ble
-    shield: asym_ble_left
+  - board: seeeduino_xiao_ble #マイコンボード名
+    shield: asym_ble_left     #シールド名
   - board: seeeduino_xiao_ble
     shield: asym_ble_right
   - board: seeeduino_xiao_ble
@@ -73,31 +73,33 @@ manifest:
 </details>
 
 ### 📄Kconfig.defconfig
-各シールドの役割付けとデバイス表示名の定義
-```c
-if SHIELD_LEFT
+```yml
+# シールド設定で分岐
+if SHIELD_LEFT             
+# デバイス表示名定数
 config ZMK_KEYBOARD_NAME
-	default "asym_ble"
+        # 16文字以内
+        default "asym_ble"
 
-config ZMK_SPLIT_ROLE_CENTRAL
-	default y
+# ホストとの接続役かどうか
+config ZMK_SPLIT_ROLE_CENTRAL 
+        default y          
 
 endif
 if SHIELD_LEFT || SHIELD_RIGHT
-
+# 分割キーボードか否か
 config ZMK_SPLIT
-	default y
-
+        default y
 endif
 ```
 ### 📄Kconfig.shield
 シールド設定の定義
-```c
-config SHIELD_LEFT
-	def_bool $(shields_list_contains,asym_ble_left)
-
+```yml
+# シールド設定の名称
+config SHIELD_LEFT                      #↓第2引数にシールド名
+        def_bool $(shields_list_contains,asym_ble_left)
 config SHIELD_RIGHT
-	def_bool $(shields_list_contains,asym_ble_right)
+        def_bool $(shields_list_contains,asym_ble_right)
 ```
 ### 📄asym_ble.conf
 機能設定 キー入力だけなら入力不要or全コメントアウト
@@ -148,20 +150,16 @@ config SHIELD_RIGHT
 デバイスのメタデータ設定<br>
 ```yml
 file_format: "1"
-//キーボード名
-id: asym_ble
-//キーボード名
-name: asym_ble
+id: asym_ble   #キーボード名
+name: asym_ble #キーボード名
 type: shield
 url: https://github.com/tamanium/my_zmk_firmware/
-//マイコンボード名
-requires: [seeeduino_xiao_ble]
+requires: [seeeduino_xiao_ble] #マイコンボード名
 features:
   - keys
-//シールド名
 siblings:
-  - asym_ble_left
-  - asym_ble_right
+  - asym_ble_left  #左シールド名
+  - asym_ble_right #右シールド名
   
 ```
 ### 📄asym_ble_left.overlay
