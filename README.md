@@ -131,20 +131,20 @@ config SHIELD_RIGHT
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
 		diode-direction = "col2row";
-		//行のGPIOを定義 第3引数は全て同じ
-		row-gpios =
-			<&xiao_d  0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-			<&xiao_d  1  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-			<&xiao_d  2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-			<&xiao_d  3  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-			<&xiao_d  4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-			<&xiao_d  5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 		//列のGPIOを定義  第3引数は全て同じ
 		col-gpios =
-			<&xiao_d  6  GPIO_ACTIVE_HIGH>,
-			<&xiao_d  7  GPIO_ACTIVE_HIGH>,
-			<&xiao_d  8  GPIO_ACTIVE_HIGH>,
-			<&xiao_d  9  GPIO_ACTIVE_HIGH>;
+			<&xiao_d  0  GPIO_ACTIVE_HIGH>,
+			<&xiao_d  1  GPIO_ACTIVE_HIGH>,
+			<&xiao_d  2  GPIO_ACTIVE_HIGH>,
+			<&xiao_d  3  GPIO_ACTIVE_HIGH>,
+			<&xiao_d  4  GPIO_ACTIVE_HIGH>,
+			<&xiao_d  5  GPIO_ACTIVE_HIGH>;
+		//行のGPIOを定義 第3引数は全て同じ
+		row-gpios =
+			<&xiao_d  6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+			<&xiao_d  7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+			<&xiao_d  8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+			<&xiao_d  9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 	};
 };
 ```
