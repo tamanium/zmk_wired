@@ -169,10 +169,10 @@ config SHIELD_RIGHT
 	keymap {
 		compatible = "zmk,keymap";
 		default_layer { bindings = <
-				&kp CAPS   &kp Q  &kp W  &kp E  &kp R  &kp T		       &kp Y  &kp U  &kp I	   &kp O       &kp P	    &kp JP_MINUS  &kp BSPC
-				&kp CAPS   &kp A  &kp S  &kp D  &kp F  &kp G		       &kp H  &kp J  &kp K	   &kp L       &kp JP_SEMI  &kp ENTER
-				&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B		&kp B  &kp N  &kp M  &kp JP_COMMA  &kp JP_DOT  &kp BSLH	    &kp RSHFT
-				&kp LCTRL			&mo 2  &lt 1 SPACE	&mo 1  &mo 2
+				&kp CAPS   &kp Q  &kp W  &kp E  &kp R        &kp T		       &kp Y  &kp U  &kp I	   &kp O       &kp P	    &kp JP_MINUS  &kp BSPC
+				&kp CAPS   &kp A  &kp S  &kp D  &kp F        &kp G		       &kp H  &kp J  &kp K	   &kp L       &kp JP_SEMI  &kp ENTER
+				&kp LSHFT  &kp Z  &kp X  &kp C  &kp V        &kp B		&kp B  &kp N  &kp M  &kp JP_COMMA  &kp JP_DOT  &kp BSLH	    &kp RSHFT
+				&kp LCTRL			&lt 2 SPACE  &lt 1 SPACE	&mo 1  &mo 2
 			>;
 		};
 		layer1 { bindings = <
@@ -184,10 +184,10 @@ config SHIELD_RIGHT
 		};
 		layer2 {
 			bindings = <
-				&trans		&kp LS(N1)	&kp LS(N2)	&kp LS(N3)	&kp LS(N4)	&kp LS(N5)					&kp LS(N6)		&kp LS(N7)		&kp UP			&kp LS(N8)		&kp LS(N9)			&kp LS(N0)		&kp DEL
-				&trans		&kp F7		&kp F8		&kp F9		&kp F10		&kp F11						&trans			&kp LEFT		&kp DOWN		&kp RIGHT		&trans				&kp LA(ENTER)
-				&trans		&kp F12		&trans		&trans		&trans		&trans			&kp F2		&kp LS(CARET)	&kp LS(JP_AT)	&kp LS(LBKT)	&kp LS(RBKT)	&kp LS(JP_SLASH)	&trans
-				&trans											&trans		&trans			&trans		&trans		
+				&trans  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)	        &kp LS(N6)     &kp LS(N7)     &kp UP        &kp LS(N8)    &kp LS(N9)        &kp LS(N0)  &kp DEL
+				&trans  &kp F7      &kp F8      &kp F9      &kp F10     &kp F11		        &trans         &kp LEFT       &kp DOWN      &kp RIGHT     &trans            &kp LA(ENTER)
+				&trans  &kp F12	    &trans      &trans      &trans      &trans		&kp F2  &kp LS(CARET)  &kp LS(JP_AT)  &kp LS(LBKT)  &kp LS(RBKT)  &kp LS(JP_SLASH)  &trans
+				&trans                                      &trans      &trans          &trans  &trans		
 			>;
 		};
 	};
