@@ -130,12 +130,12 @@ config SHIELD_RIGHT
 		compatible = "zmk,kscan-gpio-matrix";
 		diode-direction = "col2row";
 		col-gpios =
-			<&xiao_d  0  GPIO_ACTIVE_HIGH>,
-			<&xiao_d  1  GPIO_ACTIVE_HIGH>,
-			<&xiao_d  2  GPIO_ACTIVE_HIGH>,
-			<&xiao_d  3  GPIO_ACTIVE_HIGH>,
-			<&xiao_d  4  GPIO_ACTIVE_HIGH>,
-			<&xiao_d  5  GPIO_ACTIVE_HIGH>;
+			<&xiao_d  0  (GPIO_ACTIVE_HIGH)>,
+			<&xiao_d  1  (GPIO_ACTIVE_HIGH)>,
+			<&xiao_d  2  (GPIO_ACTIVE_HIGH)>,
+			<&xiao_d  3  (GPIO_ACTIVE_HIGH)>,
+			<&xiao_d  4  (GPIO_ACTIVE_HIGH)>,
+			<&xiao_d  5  (GPIO_ACTIVE_HIGH)>;
 		row-gpios =
 			<&xiao_d  6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
 			<&xiao_d  7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
@@ -147,6 +147,8 @@ config SHIELD_RIGHT
 
 
 ### 📄asym_ble.keymap
+キーマップ<br>
+```c
 / {
  
 //combos...2個以上のキー同時押しによる出力
@@ -166,20 +168,18 @@ config SHIELD_RIGHT
 //3レイヤー使用予定
 	keymap {
 		compatible = "zmk,keymap";
-		default_layer {
-			bindings = <
-				&kp CAPS	&kp Q		&kp W		&kp E		&kp R		&kp T						&kp Y			&kp U			&kp I			&kp O			&kp P				&kp JP_MINUS	&kp BSPC
-				&kp CAPS	&kp A		&kp S		&kp D		&kp F		&kp G						&kp H			&kp J			&kp K			&kp L			&kp JP_SEMI			&kp ENTER
-				&kp LSHFT	&kp Z		&kp X		&kp C		&kp V		&kp B			&kp B		kp N			&kp M			&kp JP_COMMA	&kp JP_DOT		&kp BSLH			&kp RSHFT
-				&kp LCTRL										&mo 2		&lt 1 SPACE		&mo 1		&mo 2
+		default_layer { bindings = <
+				&kp CAPS   &kp Q  &kp W  &kp E  &kp R  &kp T		       &kp Y  &kp U  &kp I	   &kp O       &kp P	    &kp JP_MINUS  &kp BSPC
+				&kp CAPS   &kp A  &kp S  &kp D  &kp F  &kp G		       &kp H  &kp J  &kp K	   &kp L       &kp JP_SEMI  &kp ENTER
+				&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B		&kp B  &kp N  &kp M  &kp JP_COMMA  &kp JP_DOT  &kp BSLH	    &kp RSHFT
+				&kp LCTRL			&mo 2  &lt 1 SPACE	&mo 1  &mo 2
 			>;
 		};
-		layer1 {
-			bindings = <
-				&kp ESC		&kp N1		&kp N2		&kp N3		&kp N4		&kp N5						&kp N6			&kp N7			&kp UP			&kp N8			&kp N9				&kp N0			&kp DEL 
-				&kp TAB		&kp F1		&kp F2		&kp F3		&kp F4		&kp F5						&kp CAPS		&kp LEFT		&kp DOWN		&kp RIGHT		&kp JP_COLON		&kp RS(ENTER)
-				&trans		&kp F6		&kp X   	&kp C		&kp PSCRN	&kp LALT		&kp F2		&kp CARET		&kp JP_AT		&kp LBKT		&kp RBKT		&kp JP_SLASH		&trans
-				&trans											&trans		&trans			&trans		&trans
+		layer1 { bindings = <
+				&kp ESC  &kp N1  &kp N2  &kp N3  &kp N4     &kp N5	        &kp N6     &kp N7     &kp UP    &kp N8     &kp N9        &kp N0  &kp DEL 
+				&kp TAB  &kp F1  &kp F2  &kp F3  &kp F4     &kp F5	        &kp CAPS   &kp LEFT   &kp DOWN  &kp RIGHT  &kp JP_COLON  &kp RS(ENTER)
+				&trans   &kp F6  &kp X   &kp C   &kp PSCRN  &kp LALT	&kp F2  &kp CARET  &kp JP_AT  &kp LBKT  &kp RBKT   &kp JP_SLASH  &trans
+				&trans				 &trans     &trans	&trans  &trans
 			>;
 		};
 		layer2 {
@@ -192,6 +192,8 @@ config SHIELD_RIGHT
 		};
 	};
 };
+
+```
 ### 📄asym_ble.zmk.yml
 デバイスのメタデータ設定<br>
 ```yml
