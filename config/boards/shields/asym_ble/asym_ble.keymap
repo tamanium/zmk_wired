@@ -18,8 +18,6 @@
 #define SYMBOLS 3
 #define MOUSE 4
 
-/ {
- 
 //combos...2個以上のキー同時押しによる出力
 //使用しないのでコメントアウト
 //	combos {
