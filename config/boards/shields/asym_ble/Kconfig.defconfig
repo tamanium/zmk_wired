@@ -1,17 +1,27 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
+# 左シールド
 if SHIELD_LEFT
-config ZMK_KEYBOARD_NAME
-	default "asym_ble"
-
-config ZMK_SPLIT_ROLE_CENTRAL
-	default y
-
+	# キーボード名
+	config ZMK_KEYBOARD_NAME
+		default "asym_ble"
+	# セントラル設定
+	config ZMK_SPLIT_ROLE_CENTRAL
+		default y
 endif
+
 if SHIELD_LEFT || SHIELD_RIGHT
-
-config ZMK_SPLIT
-	default y
-
+	# 分割設定
+	config ZMK_SPLIT
+		default y
+	# アイドル状態までの時間[msec]
+	config ZMK_IDLE_TIMEOUT
+		default 600000 # 10分
+	# ディープスリープ状態の有効化
+	config ZMK_SLEEP
+		default y
+	# ディープスリープ状態までの時間[msec]
+	config ZMK_IDLE_SLEEP_TIMEOUT
+		default 1800000 # 30分
 endif
