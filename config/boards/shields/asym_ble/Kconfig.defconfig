@@ -15,13 +15,4 @@ if SHIELD_LEFT || SHIELD_RIGHT
 	# 分割設定
 	config ZMK_SPLIT
 		default y
-	# アイドル状態までの時間[msec]
-	config ZMK_IDLE_TIMEOUT
-		default 600000 # 10分
-	# ディープスリープ状態の有効化
-	config ZMK_SLEEP
-		default y
-	# ディープスリープ状態までの時間[msec]
-	config ZMK_IDLE_SLEEP_TIMEOUT
-		default 1800000 # 30分
 endif
