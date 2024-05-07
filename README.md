@@ -103,7 +103,15 @@ config SHIELD_RIGHT
         def_bool $(shields_list_contains,asym_ble_right)
 ```
 ### 📄asym_ble.conf
-機能設定 キー入力だけなら入力不要or全コメントアウト
+機能設定
+```yml
+# アイドル機能 1分
+CONFIG_ZMK_IDLE_TIMEOUT = 60000
+# ソフトオフ機能 使わない
+# CONFIG_ZMK_PM_SOFT_OFF = y
+# スリープ機能 使わない
+# CONFIG_ZMK_SLEEP=y
+```
 
 ### 📄asym_ble.dtsi
 キー入力の基本設定
