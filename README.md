@@ -118,9 +118,14 @@ CONFIG_ZMK_IDLE_TIMEOUT = 60000
 ```c
 #include <dt-bindings/zmk/matrix_transform.h>
 / {
+
 	chosen {
-		zmk,kscan = &kscan0;
+		zmk,battery = &vbatt;
 		zmk,matrix_transform = &default_transform;
+		zmk,kscan = &kscan0;
+	};
+	vbatt: vbatt{
+		compatible = "zmk,battery-nrf-vddh";
 	};
 	default_transform: matrix_transform_0 {
 		compatible = "zmk,matrix-transform";
