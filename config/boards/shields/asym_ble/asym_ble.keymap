@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 
-#include "keycode_japanese.h"
+//#include "keycode_japanese.h"
 
 #define DEFAULT 0
 #define NUMBERS 1
