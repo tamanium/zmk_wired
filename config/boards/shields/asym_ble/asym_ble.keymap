@@ -33,7 +33,7 @@
 
 //レイヤー設定
 //3レイヤー使用予定
-        keymap {
+	keymap {
 		compatible = "zmk,keymap";
 		default_layer {
 			bindings = <
