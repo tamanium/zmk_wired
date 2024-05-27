@@ -39,10 +39,10 @@
 		compatible = "zmk,keymap";
 		default_layer {
 			bindings = <
-				&kp A &kp B &kp C &kp D &kp E &kp F
-				&kp G &kp H &kp I &kp J &kp K &kp L
-				&kp M &kp N &kp O &kp P &kp Q &kp R
-				&kp S &kp T &kp U &kp V &kp W &kp X
+				&kp A &kp B &kp C &kp D &kp E &kp F   &kp 1 &kp 5 &kp A &kp B &kp C &kp D
+				&kp G &kp H &kp I &kp J &kp K &kp L   &kp 2 &kp 6 &kp G &kp H &kp I &kp J
+				&kp M &kp N &kp O &kp P &kp Q &kp R   &kp 3 &kp 7 &kp M &kp N &kp O &kp P
+				&kp S &kp T &kp U &kp V &kp W &kp X   &kp 4 &kp 8 &kp S &kp T &kp U &kp V
 			>;
 		};
 /*
