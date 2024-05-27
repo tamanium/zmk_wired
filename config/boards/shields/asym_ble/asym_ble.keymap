@@ -50,7 +50,7 @@
 				&kp ESC		&kp N1		&kp N2		&kp N3		&kp N4		&kp N5					&kp N6		&kp N7		&kp UP		&kp N8		&kp N9			&kp N0		&kp DEL 
 				&kp TAB		&kp F1		&kp F2		&kp F3		&kp F4		&kp F5					&kp CAPS	&kp LEFT	&kp DOWN	&kp RIGHT	&kp JP_COLON		&kp RS(ENTER)
 				&trans		&kp F6		&kp X   	&kp C		&kp PSCRN	&kp LALT		&kp F2		&kp CARET	&kp JP_AT	&kp LBKT	&kp RBKT	&kp JP_SLASH		&trans
-				&trans						&trans		&trans		&trans			&trans		&trans &kp P	&trans
+				&trans						&trans		&trans		&trans			&trans		&trans		&trans
 			>;
 		};
 //		layer2 {
