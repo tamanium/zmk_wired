@@ -37,7 +37,7 @@
 
 	keymap {
 		compatible = "zmk,keymap";
-		default_layer { bindings = < &kp A >; };
+		default_layer { bindings = < &kp A &out OUT_TOG>; };
 /*
 		default_layer {
 			bindings = <
