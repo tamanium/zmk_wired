@@ -2,5 +2,5 @@
 # SPDX-License-Identifier: MIT
 
 config ZMK_KEYBOARD_NAME
-	default "asym_L"
+	default "asym_wired_left"
 
