@@ -1,6 +1,6 @@
 file_format: "1"
-id: asym_ble
-name: asym_ble
+id: asym_wired_left
+name: asym_wired_left
 type: shield
 url: https://github.com/tamanium/my_zmk_firmware/
 requires: [seeeduino_xiao_ble]
