@@ -8,15 +8,14 @@
      ├─ 📄west.yml
      └─ 📁boards ─ 📁shields
                     ├─ 📁settings_reset
-                    └─ 📁asym_ble
+                    └─ 📁asym
                         ├─ 📄Kconfig.defconfig
                         ├─ 📄Kconfig.shield
-                        ├─ 📄asym_ble.conf
-                        ├─ 📄asym_ble.dtsi
-                        ├─ 📄asym_ble.keymap
-                        ├─ 📄asym_ble.zmk.yml
-                        ├─ 📄asym_ble_left.overlay
-                        └─ 📄asym_ble_right.overlay
+                        ├─ 📄asym.conf
+                        ├─ 📄asym.dtsi
+                        ├─ 📄asym.keymap
+                        ├─ 📄asym.zmk.yml
+                        └─ 📄asym_left.overlay
                         
 ```
 
@@ -66,19 +65,9 @@ Layer 2
 ### 📄build.yaml
 ```yaml
 #マイコンボード名
-board: [seeeduino_xiao_ble]
+board: [seeeduino_xiao_rp2040]
 #シールド名 カンマ区切り
-shield: [asym_ble_left, asym_ble_right, settings_reset] 
-```
-こっちの入力方法でもOK
-```yaml
-include:
-  - board: seeeduino_xiao_ble #マイコンボード名
-    shield: asym_ble_left     #シールド名
-  - board: seeeduino_xiao_ble
-    shield: asym_ble_right
-  - board: seeeduino_xiao_ble
-    shield: settings_reset
+shield: [asym_left, settings_reset]
 ```
 
 ### 📄build.yml
@@ -117,45 +106,28 @@ manifest:
 
 ### 📄Kconfig.defconfig
 ```yml
-# シールド設定で分岐
-if SHIELD_LEFT             
-# デバイス表示名定数
 config ZMK_KEYBOARD_NAME
-        # 16文字以内
-        default "asym_ble"
-
-# ホストとの接続役かどうか
-config ZMK_SPLIT_ROLE_CENTRAL 
-        default y          
-
-endif
-if SHIELD_LEFT || SHIELD_RIGHT
-# 分割キーボードか否か
-config ZMK_SPLIT
-        default y
-endif
+	default "asym_wired_left"
 ```
 ### 📄Kconfig.shield
 シールド設定の定義
 ```yml
 # シールド設定の名称
-config SHIELD_LEFT                      #↓第2引数にシールド名
-        def_bool $(shields_list_contains,asym_ble_left)
-config SHIELD_RIGHT
-        def_bool $(shields_list_contains,asym_ble_right)
+config SHIELD_LEFT
+	def_bool $(shields_list_contains,asym_left)
 ```
 ### 📄asym_ble.conf
 機能設定
 ```yml
 # アイドル機能 1分
-CONFIG_ZMK_IDLE_TIMEOUT = 60000
+# CONFIG_ZMK_IDLE_TIMEOUT = 60000
 # ソフトオフ機能 使わない
 # CONFIG_ZMK_PM_SOFT_OFF = y
 # スリープ機能 使わない
 # CONFIG_ZMK_SLEEP=y
 ```
 
-### 📄asym_ble.dtsi
+### 📄asym.dtsi
 キー入力の基本設定
 ```c
 #include <dt-bindings/zmk/matrix_transform.h>
