@@ -1,5 +1,6 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-config SHIELD_LEFT
-	def_bool $(shields_list_contains,asym)
+config ZMK_KEYBOARD_NAME
+	default "asym_left"
+
