@@ -108,6 +108,7 @@ manifest:
 ```yml
 config ZMK_KEYBOARD_NAME
 	default "asym_wired_left"
+	
 ```
 ### 📄Kconfig.shield
 シールド設定の定義
@@ -115,6 +116,7 @@ config ZMK_KEYBOARD_NAME
 # シールド設定の名称
 config SHIELD_LEFT
 	def_bool $(shields_list_contains,asym_left)
+	
 ```
 ### 📄asym_ble.conf
 機能設定
