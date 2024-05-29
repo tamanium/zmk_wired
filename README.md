@@ -107,19 +107,20 @@ manifest:
 ### 📄Kconfig.defconfig
 ```yml
 config ZMK_KEYBOARD_NAME
-	default "asym_wired_left"
-	
+       default "asym_wired_left"
 ```
 ### 📄Kconfig.shield
 シールド設定の定義
 ```yml
 # シールド設定の名称
 config SHIELD_LEFT
-	def_bool $(shields_list_contains,asym_left)
-	
+       def_bool $(shields_list_contains,asym_left)
 ```
 ### 📄asym_ble.conf
 機能設定
+<details>
+
+<summary>クリックして内容表示</summary>
 ```yml
 # アイドル機能 1分
 # CONFIG_ZMK_IDLE_TIMEOUT = 60000
@@ -128,6 +129,7 @@ config SHIELD_LEFT
 # スリープ機能 使わない
 # CONFIG_ZMK_SLEEP=y
 ```
+</details>
 
 ### 📄asym.dtsi
 キー入力の基本設定
