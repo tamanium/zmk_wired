@@ -4,4 +4,4 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "asym_ble.dtsi"
+#include "asym.dtsi"
