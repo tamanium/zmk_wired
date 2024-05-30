@@ -31,13 +31,13 @@
 	};
 	
 	chosen {
-		zmk,battery = &vbatt;
+		//zmk,battery = &vbatt;
 		zmk,matrix_transform = &default_transform;
 		zmk,kscan = &kscan0;
 	};
-	vbatt: vbatt{
-		compatible = "zmk,battery-nrf-vddh";
-	};
+	//vbatt: vbatt{
+	//	compatible = "zmk,battery-nrf-vddh";
+	//};
 	default_transform: matrix_transform_0 {
 		compatible = "zmk,matrix-transform";
 		columns = <12>;

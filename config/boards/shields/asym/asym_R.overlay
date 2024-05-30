@@ -6,8 +6,7 @@
 
 #include "asym.dtsi"
 &kscan0 {
-	compatible = "zmk,kscan-gpio-matrix";
-	diode-direction = "col2row";
+	row-offset = <6>;
 	col-gpios =
 		<&core_a   7 GPIO_ACTIVE_HIGH>,
 		<&core_a   5 GPIO_ACTIVE_HIGH>,
