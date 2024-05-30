@@ -1,3 +1,3 @@
 
 board: [seeeduino_xiao_rp2040]
-shield: [asym_L, settings_reset]
+shield: [asym_L,asym_R, settings_reset]
