@@ -7,7 +7,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
-	xiao_d: connector{
+	core_a: connector{
 		gpio-map =
 			<1 0 &gpio0 1 0>,
 			<2 0 &gpio0 2 0>,
@@ -54,16 +54,16 @@
 		compatible = "zmk,kscan-gpio-matrix";
 		diode-direction = "col2row";
 		col-gpios =
-			<&xiao_d  29 GPIO_ACTIVE_HIGH>,
-			<&xiao_d   6 GPIO_ACTIVE_HIGH>,
-			<&xiao_d  11 GPIO_ACTIVE_HIGH>, 
-			<&xiao_d  12 GPIO_ACTIVE_HIGH>, 
-			<&xiao_d   9 GPIO_ACTIVE_HIGH>, 
-			<&xiao_d   8 GPIO_ACTIVE_HIGH>;
+			<&core_a  29 GPIO_ACTIVE_HIGH>,
+			<&core_a   6 GPIO_ACTIVE_HIGH>,
+			<&core_a  11 GPIO_ACTIVE_HIGH>, 
+			<&core_a  12 GPIO_ACTIVE_HIGH>, 
+			<&core_a   9 GPIO_ACTIVE_HIGH>, 
+			<&core_a   8 GPIO_ACTIVE_HIGH>;
 		row-gpios =
-			<&xiao_d  13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-			<&xiao_d  14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-			<&xiao_d  15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-			<&xiao_d   7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+			<&core_a  13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+			<&core_a  14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+			<&core_a  15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+			<&core_a   7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 	};
 };
