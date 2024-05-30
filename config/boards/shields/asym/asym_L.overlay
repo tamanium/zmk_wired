@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "asym_L.dtsi"
+#include "asym.dtsi"
 &kscan0 {
 	compatible = "zmk,kscan-gpio-matrix";
 	diode-direction = "col2row";
