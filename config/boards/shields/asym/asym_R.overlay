@@ -5,8 +5,10 @@
  */
 
 #include "asym.dtsi"
-&kscan0 {
+&default_transform {
 	col-offset = <6>;
+};
+&kscan0 {
 	col-gpios =
 		<&core_a   7 GPIO_ACTIVE_HIGH>,
 		<&core_a   5 GPIO_ACTIVE_HIGH>,
