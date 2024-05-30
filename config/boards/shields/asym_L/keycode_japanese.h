@@ -38,7 +38,7 @@
 #define JP_QMARK LS(JP_SLASH) // ?
 #define JP_UNDER LS(JP_BSLH)  // _
 
-
+/*
 #define JP_EXCL  RS(N1)       // !
 #define JP_DQT   RS(N2)       // "
 #define JP_HASH  RS(N3)       // #
@@ -61,3 +61,4 @@
 #define JP_RT    RS(JP_DOT)   // >
 #define JP_QMARK RS(JP_SLASH) // ?
 #define JP_UNDER RS(JP_BSLH)  // _
+*/
