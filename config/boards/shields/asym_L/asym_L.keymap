@@ -42,7 +42,7 @@
 				&kp JP_EISU	&kp Q		&kp W		&kp E		&kp R		&kp T
 				&kp CAPS	&kp A		&kp S		&kp D		&kp F		&kp G
 				&kp LSHFT	&kp Z		&kp X		&kp X		&kp C		&kp B
-				&kp LCTRL	&none		&none		&kp LALT	&lt 2 SP	&lt 1 SP
+				&kp LCTRL	&none		&none		&kp LALT	&lt 2 SPACE	&lt 1 SPACE
 			>;
 		};
 		layer1 {
