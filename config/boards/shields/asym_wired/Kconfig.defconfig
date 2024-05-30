@@ -7,14 +7,14 @@ config ZMK_SPLIT_ROLE_CENTRAL
 if SHIELD_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "asym_L"
+	default "asym_left"
 	    
 endif
 
 if SHIELD_RIGHT
 
 config ZMK_KEYBOARD_NAME
-	default "asym_R"
+	default "asym_right"
     
 endif
 
