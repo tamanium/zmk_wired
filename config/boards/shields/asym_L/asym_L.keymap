@@ -57,7 +57,7 @@
 			bindings = <
 				&trans		&kp LS(N1)	&kp LS(N2)	&kp LS(N3)	&kp LS(N4)	&kp LS(N5)
 				&trans		&kp F7		&kp F8		&kp F9		&kp F10		&kp F11
-				&trans		&kp F12		&kp JP_HENK	&kp JP_MHEN	&JP_KANA	&trans
+				&trans		&kp F12		&kp JP_HENK	&kp JP_MHEN	&kp JP_KANA	&trans
 				&trans		&trans		&trans		&trans		&trans		&trans
 			>;
 		};
