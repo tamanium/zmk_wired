@@ -1,0 +1,21 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "asym.dtsi"
+&kscan0 {
+	col-gpios =
+		<&core_a  29 GPIO_ACTIVE_HIGH>,
+		<&core_a   6 GPIO_ACTIVE_HIGH>,
+		<&core_a  11 GPIO_ACTIVE_HIGH>, 
+		<&core_a  12 GPIO_ACTIVE_HIGH>, 
+		<&core_a   9 GPIO_ACTIVE_HIGH>, 
+		<&core_a   8 GPIO_ACTIVE_HIGH>;
+	row-gpios =
+		<&core_a  13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+		<&core_a  14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+		<&core_a  15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+		<&core_a   7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+};
