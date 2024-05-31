@@ -1,4 +1,4 @@
-# zmk firmwareの作成方法について
+# zmk firmwareの作成方について
 ## フォルダ構成
 ```:フォルダ構成
 📁my_zmk_firmware
@@ -8,14 +8,28 @@
      ├─ 📄west.yml
      └─ 📁boards ─ 📁shields
                     ├─ 📁settings_reset
-                    └─ 📁asym
+                    │
+                    ├─ 📁asym
+                    │  ├─ 📄Kconfig.defconfig
+                    │  ├─ 📄Kconfig.shield
+                    │  ├─ 📄keycode_japanese.h
+                    │  ├─ 📄asym.conf
+                    │  ├─ 📄asym.dtsi
+                    │  ├─ 📄asym.keymap
+                    │  ├─ 📄asym.zmk.yml
+                    │  ├─ 📄asym_left.overlay
+                    │  └─ 📄asym_right.overlay
+                    │    
+                    └─ 📁asym_ble
                         ├─ 📄Kconfig.defconfig
                         ├─ 📄Kconfig.shield
-                        ├─ 📄asym.conf
-                        ├─ 📄asym.dtsi
-                        ├─ 📄asym.keymap
-                        ├─ 📄asym.zmk.yml
-                        └─ 📄asym_left.overlay
+                        ├─ 📄keycode_japanese.h
+                        ├─ 📄asym_ble.conf
+                        ├─ 📄asym_ble.dtsi
+                        ├─ 📄asym_ble.keymap
+                        ├─ 📄asym_ble.zmk.yml
+                        └─ 📄asym_ble_left.overlay
+                        └─ 📄asym_ble_right.overlay
                         
 ```
 
