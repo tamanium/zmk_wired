@@ -1,4 +1,4 @@
-# zmk firmwareの作成方について
+# zmk firmwareについて
 ## フォルダ構成
 ```:フォルダ構成
 📁my_zmk_firmware
