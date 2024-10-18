@@ -24,7 +24,7 @@
 			bindings = <
 				&kp ESC		&kp N1		&kp N2		&kp N3		&kp N4		&kp N5						&kp N6		&kp N7		&kp UP			&kp N8			&kp N9				&kp N0			&kp DEL 
 				&kp TAB		&kp N6		&kp N7		&kp N8		&kp N9		&kp N0						&kp CAPS	&kp LEFT	&kp DOWN		&kp RIGHT		&kp JP_COLON		&kp RS(ENTER)
-				&trans		&kp F11		&kp F12		&kp JP_HENK	&kp PSCRN	&kp LALT			&kp F2	&kp PG_UP	&kp PG_DN	&kp JP_LBKT		&kp JP_RBKT		&kp JP_SLASH		&trans
+				&trans		&kp F11		&kp F12		&kp JP_HENK	&kp PSCRN	&kp LALT			&kp F2	&kp K_APP	&kp RWIN	&kp JP_LBKT		&kp JP_RBKT		&kp JP_SLASH		&trans
 				&trans								&trans		&trans		&trans				&trans	&trans		&kp JP_AT
 			>;
 		};
@@ -32,7 +32,7 @@
 			bindings = <
 				&trans		&kp LS(N1)	&kp LS(N2)	&kp LS(N3)	&kp LS(N4)	&kp LS(N5)					&kp LS(N6)	&kp LS(N7)	&kp UP			&kp LS(N8)		&kp LS(N9)			&kp JP_PIPE		&kp DEL
 				&kp LS(TAB)	&kp F1		&kp F2		&kp F3		&kp F4		&kp F5						&trans		&kp LEFT	&kp DOWN		&kp RIGHT		&kp LS(JP_COLON)	&kp LA(ENTER)
-				&trans		&kp F6		&kp F7		&kp F8		&kp F9		&kp F10				&kp F2	&kp PG_UP	&kp PG_DN	&kp LS(JP_LBKT)	&kp LS(JP_RBKT)	&kp LS(JP_SLASH)	&trans
+				&trans		&kp F6		&kp F7		&kp F8		&kp F9		&kp F10				&kp F2	&kp K_APP	&kp RWIN	&kp LS(JP_LBKT)	&kp LS(JP_RBKT)	&kp LS(JP_SLASH)	&trans
 				&trans								&trans		&trans		&trans				&trans	&trans		&kp LS(JP_AT)
 			>;
 		};
